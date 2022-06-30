@@ -149,3 +149,30 @@ nav ul li a {
   border-radius: 5px;
   
 }
+
+.post-list {
+  position: sticky;
+  top: 90px;
+}
+
+#my-category {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.progress{
+  height:10px;
+  background: #000;
+  width:100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+.progress__highlight{
+  transition: width 0.15s linear;
+  background:#03c4a1;
+  height:100%;
+  width:0%;
+}

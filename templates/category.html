@@ -5,14 +5,25 @@
 {% endblock title %}
 
 {% block content %}
-  <div>
-    <strong>Category: </strong> <span>{{category.title}}</span>
-    <img src="/media/{{category.image}}" style="width: 100%;height: 400px;" alt="Category Image Not Found">
+  <div id="my-category">
+    
+    <img src="/media/{{category.image}}" style="width:120px;height: 100px;" alt="Category Image Not Found">
+
+    <h3>
+      All the Tutorials of {{category.title}} can be found here
+    </h3>
   </div>
 
-  {% for post in posts %}
-    <a href="/post/{{post.url}}"> {{post.title}}</a>
+  <ul class="list-group mt-3">
+    {% for post in posts %}
+    <li class="list-group-item">
+      <a href="/post/{{post.url}}"> {{post.title}}</a>
+    </li>
+
     {% empty %}
-      <strong>No Posts added </strong>
+      <h3 class="fw-bold text-center text-success"> {{category.title}} Tutorial Will be Coming Soon. </h3>
   {% endfor %}
+  </ul>
+
+  
 {% endblock content %}
