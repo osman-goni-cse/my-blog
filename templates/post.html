@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block title %} Post {% endblock title %} 
+
+{% block content %}
+
+<div class="row">
+  <div class="col-4">
+    <ul class="list-group mt-5">
+      {% for pst in posts %}
+        
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+          <a href="/post/{{pst.url}}">{{pst.title}}</a>
+          {% comment %} <span class="badge bg-primary rounded-pill">14</span> {% endcomment %}
+          {% comment %} <i class="fa-brands fa-apple"></i> {% endcomment %}
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+  <div class="col-8">
+    {% comment %} <p><strong>Post Name:</strong> {{post.title}}</p>
+    <p><strong>Category Name:</strong> {{post.cat.title}}</p>
+    <img
+      src="/media/{{post.image}}"
+      style="width: 300px; height: 300px"
+      alt=""
+    /> {% endcomment %}
+    <br />
+    <p>{{post.content | safe}}</p>
+  </div>
+</div>
+{% endblock content %}

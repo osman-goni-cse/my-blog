@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title %}
+  Categories
+{% endblock title %}
+
+{% block content %}
+  <div>
+    <strong>Category: </strong> <span>{{category.title}}</span>
+    <img src="/media/{{category.image}}" style="width: 100%;height: 400px;" alt="Category Image Not Found">
+  </div>
+
+  {% for post in posts %}
+    <a href="/post/{{post.url}}"> {{post.title}}</a>
+    {% empty %}
+      <strong>No Posts added </strong>
+  {% endfor %}
+{% endblock content %}

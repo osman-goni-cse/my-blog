@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+
+{% block title %}
+  Home
+{% endblock title %}
+
+{% block content %}
+<section>
+  <div class="banner container">
+    <div class="banner-left">
+      <h1 class="fw-bold section-title">Start your Journey as Coder</h1>
+      <p>World is moving so fast.We know that technology makes our life easier.If you want to keep up with the technology then you are in right place.</p>
+      <h5 class="fw-bold">Get The latest Tutorials and Updates</h3>
+        <div class="input-group mb-3">
+          <input type="text" class="form-control" placeholder="Enter your email address" aria-label="Enter your email address" aria-describedby="button-addon2">
+          <button class="btn btn-outline-secondary" type="button" id="button-addon2">SUBSCRIBE</button>
+        </div>
+    </div>
+    <div class="banner-right">
+      <img src="/media/images/education-banner.jpg" alt="">
+    </div>
+  </div>
+</section>
+
+  <div class="row">
+    <div class="col-4">
+      <h3 class="fw-bold section-title">Choose What To Learn</h2>
+      <p>Start learning programming language of your choice.</p>
+    </div>
+    <div class="col-8" id="categories">
+      
+        {% for category in categories %}
+          {% comment %} <div class="col">
+            <div class="card">
+              <img src="/media/{{category.image}}" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">{{category.title}}</h5>
+                <p class="card-text">{{category.description}}</p>
+              </div>
+            </div>
+          </div> {% endcomment %}
+          <a href="/category/{{category.url}}" class="category">
+            <img src="/media/{{category.image}}" alt="">
+            <h6 class="fw-bold">Learn {{category.title}}</h6>
+          </a>
+        {% endfor %}
+        <a href="" class="category d-flex align-items-center justify-content-center">
+          <h6 style="color:#0556f3;margin-right:5px;margin-top:5px;" class="fw-bold">View All Tutorials</h3>
+          <i style="color:#0556f3;" class="fas fa-arrow-right"></i>
+        </a>
+    </div>
+  </div>
+
+ 
+  <h2 class="section-title fw-bold my-5">Top Blogs</h3>
+
+  <div class="blogs">
+    {% for post in posts %}
+    <article class="blog">
+    
+      <div class="blog-info">
+        <h3 class="blog-title">{{post.title}}</h3>
+        <p class="blog-author">By<a href=""> Osman Goni</a> on 2022-06-06</p>
+        <p>
+          {{post.content | truncatewords:50 | safe}}
+        </p>
+        <a href="/post/{{post.url}}" class="read-more">
+          READ MORE
+        </a>
+      </div>
+    </article>
+    {% endfor %}
+  </div>
+{% endblock content %}
