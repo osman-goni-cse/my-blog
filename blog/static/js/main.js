@@ -1,13 +1,10 @@
-alert()
-const container = document.getElementById('js-container');
-const highlight = document.getElementById('js-highlight');
-var containerHeight;
+// When the user scrolls the page, execute myFunction
+window.onscroll = function() {myFunction()};
 
-window.onscroll = function(){
-  containerHeight = container.offsetHeight - window.innerHeight;
-  containerPos = container.getBoundingClientRect();
-  diff = containerHeight + containerPos.top;
-  progressPercentage = diff / containerHeight * 100;
-  cssWidth = Math.floor(100 - progressPercentage);
-  highlight.style.width = cssWidth + "%";
+function myFunction() {
+  var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+  var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+  var scrolled = (winScroll / height) * 100;
+  document.getElementById("myBar").style.width = scrolled + "%";
+  
 }
