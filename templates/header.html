@@ -3,10 +3,20 @@
   <nav class="container">
     <h2 class="fw-bold">Osman's Planet</h2>
     <ul>
-      <li><a href="/">Home</a></li>
-      <li><a href="">Courses</a></li>
-      <li><a href="">About</a></li>
-      <li><a href="/admin">Admin</a></li>
+      <li><a href="/" class="btn btn-default fw-bold">Home</a></li>
+      {% comment %} <li><a href="">Courses</a></li> {% endcomment %}
+      <div class="dropdown">
+        <button class="btn btn-default dropdown-toggle fw-bold" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+          Courses
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+          {% for category in categories %}
+            <li><a class="dropdown-item" href="/category/{{category.url}}">{{category.title}}</a></li>
+          {% endfor %}
+        </ul>
+      </div>
+      <li><a href="/about/" class="btn btn-default fw-bold">About</a></li>
+      <li><a href="/admin" class="btn btn-default fw-bold">Admin</a></li>
       
     </ul>
   </nav>

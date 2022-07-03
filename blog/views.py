@@ -72,9 +72,20 @@ def categories(request, url):
 
 def allPosts(request):
   posts = Post.objects.all()
+  categories = Category.objects.all()
 
   data = {
     'posts':posts,
+    'categories': categories,
   }
 
   return render(request, 'allPosts.html', data)
+
+
+def about(request):
+  categories = Category.objects.all()
+
+  data = {
+    'categories': categories,
+  }
+  return render(request, 'about.html', data)

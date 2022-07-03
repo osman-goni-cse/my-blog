@@ -19,6 +19,7 @@ header {
   border-radius: 5px;
   /* width: 100%; */
   z-index: 100;
+  box-shadow: 0px 0.5px 10px lightgrey;
 }
 
 nav {
@@ -31,6 +32,7 @@ nav {
 
 nav ul {
   display: flex;
+  margin-top: 12px;
 }
 
 nav ul li {
@@ -172,7 +174,7 @@ nav ul li a {
   height: 8px;
   background: #ccc;
   position: fixed;
-  z-index: 100;
+  z-index: 90;
 }
 
 /* The progress bar (scroll indicator) */
@@ -218,4 +220,37 @@ footer ul li small {
 }
 footer ul li a {
   color: white;
+}
+
+/* About CSS */
+.margin-dao {
+  /* margin-left: 70px; */
+}
+
+#profile {
+  width: 50%;
+  margin-left: 200px;
+}
+
+.focus {
+  padding-left: 10px;
+  border-left: 5px solid;
+  border-image: linear-gradient(orange, tomato);
+  border-image-slice: 1;
+}
+
+.color {
+  color: orangered;
+}
+
+.about {
+  display: flex;
+  justify-content: space-around;
+}
+
+.about-me {
+  background-color: bisque;
+  padding: 40px;
+  border-radius: 10px;
+  text-align: justify;
 }
