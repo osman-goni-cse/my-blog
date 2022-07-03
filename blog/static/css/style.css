@@ -155,6 +155,10 @@ nav ul li a {
   top: 90px;
 }
 
+.post-content {
+  height: 250px;
+}
+
 #my-category {
   display: flex;
   flex-direction: row;
@@ -178,6 +182,11 @@ nav ul li a {
   width: 0%;
 }
 
+/* #page-container {
+  position: relative;
+  min-height: 85vh;
+} */
+
 #last-part {
   height: 150px;
   background-color: #0e0927;
@@ -185,6 +194,9 @@ nav ul li a {
   display: flex;
   justify-content: center;
   align-items: center;
+  /* position: absolute; */
+  bottom: 0;
+  width: 100%;
 }
 
 #social-media {

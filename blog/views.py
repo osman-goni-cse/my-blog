@@ -5,7 +5,7 @@ from .forms import CommentForm
 # Create your views here.
 
 def home(request):
-  posts = Post.objects.all()[:11] # 10 ta post dekabo initially
+  posts = Post.objects.all()[:10] # 10 ta post dekabo initially
   print(posts)
 
   categories = Category.objects.all()
@@ -68,3 +68,13 @@ def categories(request, url):
   }
 
   return render(request, 'category.html', data)
+
+
+def allPosts(request):
+  posts = Post.objects.all()
+
+  data = {
+    'posts':posts,
+  }
+
+  return render(request, 'allPosts.html', data)

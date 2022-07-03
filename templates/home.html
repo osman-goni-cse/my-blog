@@ -5,7 +5,7 @@
 {% endblock title %}
 
 {% block content %}
-<section>
+
   <div class="banner container">
     <div class="banner-left">
       <h1 class="fw-bold section-title">Start your Journey as Coder</h1>
@@ -20,7 +20,8 @@
       <img src="/media/images/education-banner.jpg" alt="">
     </div>
   </div>
-</section>
+
+
 
   <div class="row">
     <div class="col-4">
@@ -44,7 +45,7 @@
             <h6 class="fw-bold">Learn {{category.title}}</h6>
           </a>
         {% endfor %}
-        <a href="" class="category d-flex align-items-center justify-content-center">
+        <a href="/all-posts/" class="category d-flex align-items-center justify-content-center">
           <h6 style="color:#0556f3;margin-right:5px;margin-top:5px;" class="fw-bold">View All Tutorials</h3>
           <i style="color:#0556f3;" class="fas fa-arrow-right"></i>
         </a>
@@ -52,18 +53,20 @@
   </div>
 
  
-  <h2 class="section-title fw-bold my-5">Top Blogs</h3>
+  <h2 class="section-title fw-bold my-5">Recent Posts</h3>
 
   <div class="blogs">
     {% for post in posts %}
     <article class="blog">
     
       <div class="blog-info">
-        <h3 class="blog-title">{{post.title}}</h3>
-        <p class="blog-author">By<a href=""> Osman Goni</a> on 2022-06-06</p>
-        <p>
-          {{post.content | truncatewords:50 | safe}}
-        </p>
+        <div class="post-content">
+          <h3 class="blog-title">{{post.title}}</h3>
+          <p class="blog-author">By<a href=""> Osman Goni</a> on {{post.created_on}}</p>
+          <div>
+            {{post.content | truncatechars_html:300 | safe}}
+          </div>
+        </div>
         <a href="/post/{{post.url}}" class="read-more">
           READ MORE
         </a>

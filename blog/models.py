@@ -29,7 +29,11 @@ class Post(models.Model):
   content = HTMLField()
   url = models.CharField(max_length=100)
   cat = models.ForeignKey(Category, on_delete=models.CASCADE)
-  image = models.ImageField(upload_to='post/')
+  created_on = models.DateTimeField(auto_now_add=True)
+  # image = models.ImageField(upload_to='post/')
+  
+  class Meta:
+    ordering = ['-created_on']
 
   def __str__(self):
     return self.title

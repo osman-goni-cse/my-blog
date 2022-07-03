@@ -17,10 +17,11 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf.urls.static import static
 from django.conf import settings
-from .views import home, posts, categories
+from .views import home, posts, categories, allPosts
 
 urlpatterns = [
     path('', home),
     path('post/<slug:url>', posts),
     path('category/<slug:url>', categories),
+    path('all-posts/', allPosts)
 ]
