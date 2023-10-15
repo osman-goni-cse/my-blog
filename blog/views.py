@@ -6,7 +6,7 @@ from .forms import CommentForm
 
 def home(request):
   posts = Post.objects.all()[:10] # 10 ta post dekabo initially
-  print(posts)
+  # print(posts)
 
   categories = Category.objects.all()
 
